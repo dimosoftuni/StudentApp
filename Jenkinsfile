@@ -29,6 +29,13 @@ pipeline {
                 }
             }
         }
+
+        stage('Deploy') {
+            steps {
+                input message: 'Approve deployment?', ok: 'Deploy'
+                bat 'echo Deploying application...'  // Replace this with real deploy command
+            }
+        }
     }
 
     post {
